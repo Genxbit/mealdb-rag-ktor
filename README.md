@@ -177,7 +177,7 @@ Create the index using the included script:
 Check:
 
 ```bash
-curl -s http://localhost:9200/_cat/indices?v | grep meals-lab || true
+./scripts/es-mapping.sh
 ```
 
 ---
@@ -234,17 +234,15 @@ Suggested workflow:
 
 1. Open the repo folder in VS Code
 
-2. Ensure Java/Gradle support is installed (e.g. _Extension Pack for Java_)
-
-3. Start infra:
-
    ```bash
-   docker compose -f docker/docker-compose.yml up -d
+   code .
    ```
 
-4. Use the provided VS Code run/debug configuration to start the server (look for a configuration like **Run Server**)
+2. Ensure Java/Gradle support is installed (e.g. _Extension Pack for Java_)
 
-5. Verify:
+3. Use the provided VS Code run/debug configuration to start the server (look for a configuration like **Run Server**)
+
+4. Verify:
 
    ```bash
    curl -s http://localhost:8080/api/health | jq
