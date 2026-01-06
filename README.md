@@ -1,4 +1,5 @@
 # mealdb-rag-ktor 🍳🔎🤖
+
 **What’s in my fridge? → recipe + plan. Kotlin AI lab (Ktor + Ollama + Elasticsearch).**
 
 A Kotlin lab project that mixes **RAG-style retrieval** with a **local LLM** to turn “what’s in my fridge?” into a realistic dinner plan.
