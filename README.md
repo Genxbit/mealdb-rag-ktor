@@ -1,4 +1,4 @@
-Create it (or copy from an example, if you have one):Create it (or copy from an example, if you have one):# mealdb-rag-ktor 🍳🔎🤖
+# mealdb-rag-ktor 🍳🔎🤖
 
 A Kotlin lab project that mixes **RAG-style retrieval** with a **local LLM** to turn “what’s in my fridge?” into a realistic dinner plan.
 
