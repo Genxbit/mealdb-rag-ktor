@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Attach to Ktor (Gradle debug)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 5005
+    },
+    {
+      "type": "java",
+      "name": "Debug CLI (direct)",
+      "request": "launch",
+      "mainClass": "com.genxbit.mealdbcli.Main",
+      "projectName": "cli",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug Ktor Server (Gradle + Attach)",
+      "preLaunchTask": "server: debug (Gradle)",
+      "configurations": ["Attach to Ktor (Gradle debug)"]
+    }
+  ]
+}

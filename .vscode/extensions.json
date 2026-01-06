@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "mathiasfrohlich.kotlin",
+    "vscjava.vscode-gradle",
+    "vscjava.vscode-java-pack",
+    "ms-azuretools.vscode-docker",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml"
+  ],
+  "unwantedRecommendations": [
+    "fwcd.kotlin"
+  ]
+}
+

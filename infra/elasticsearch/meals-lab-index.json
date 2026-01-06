@@ -1,0 +1,35 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "refresh_interval": "1s"
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "idMeal": { "type": "keyword" },
+
+      "strMeal": {
+        "type": "text",
+        "fields": { "keyword": { "type": "keyword" } }
+      },
+      "strCategory": { "type": "keyword" },
+      "strArea": { "type": "keyword" },
+
+      "ingredients": { "type": "keyword" },
+      "measures": { "type": "keyword" },
+
+      "strInstructions": { "type": "text" },
+
+      "strMealThumb": { "type": "keyword", "index": false },
+      "strSource": { "type": "keyword", "index": false },
+      "strYoutube": { "type": "keyword", "index": false },
+
+      "ingCount": { "type": "integer" },
+      "instrLen": { "type": "integer" },
+
+      "createdAt": { "type": "date" },
+      "lastSeenAt": { "type": "date" }
+    }
+  }
+}

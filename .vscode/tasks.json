@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "server: debug (Gradle)",
+      "type": "shell",
+      "command": "./gradlew",
+      "args": [":server:run", "--debug-jvm", "--console=plain"],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "owner": "custom",
+          "fileLocation": ["relative", "${workspaceFolder}"],
+          "pattern": [
+            {
+              "regexp": "a^",
+              "file": 1,
+              "line": 1,
+              "message": 1
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".*(:server:run|Task :server:run).*",
+            "endsPattern": ".*Listening for transport dt_socket at address: 5005.*"
+          }
+        }
+      ]
+    },
+    {
+      "label": "docker: up",
+      "type": "shell",
+      "command": "docker compose -f docker/docker-compose.yml up -d",
+      "problemMatcher": []
+    },
+    {
+      "label": "docker: down",
+      "type": "shell",
+      "command": "docker compose -f docker/docker-compose.yml down",
+      "problemMatcher": []
+    },
+    {
+      "label": "server: run (Ktor)",
+      "type": "shell",
+      "command": "./gradlew",
+      "args": [":server:run", "--console=plain"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "cli: run",
+      "type": "shell",
+      "command": "./gradlew",
+      "args": [":cli:run", "--console=plain"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "api: health",
+      "type": "shell",
+      "command": "curl -s http://localhost:8080/api/health",
+      "problemMatcher": []
+    },
+    {
+      "label": "lab: up + server",
+      "dependsOrder": "sequence",
+      "dependsOn": ["docker: up", "server: run (Ktor)"],
+      "problemMatcher": []
+    }
+  ]
+}

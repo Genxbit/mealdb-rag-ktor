@@ -1,0 +1,28 @@
+{
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home",
+
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.import.gradle.enabled": true,
+
+  "kotlin.languageServer.enabled": true,
+
+  "files.exclude": {
+    "**/.gradle": true,
+    "**/.idea": true,
+    "**/build": true,
+    "**/out": true
+  },
+  "search.exclude": {
+    "**/.gradle": true,
+    "**/build": true
+  },
+
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "java.compile.nullAnalysis.mode": "automatic"
+}
